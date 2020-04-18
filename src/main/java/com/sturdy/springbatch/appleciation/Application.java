@@ -1,13 +1,15 @@
 package com.sturdy.springbatch.appleciation;
 
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@EnableBatchProcessing
 @SpringBootApplication
-public class AppleciationApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppleciationApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }

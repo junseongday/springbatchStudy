@@ -18,6 +18,8 @@ spring:
       username: sa
       password:
       driver-class-name: org.h2.Driver
+    properties:
+#      hibernate.default_batch_fetch_size: ${chunkSize:1000}
 ---
 spring:
   profiles: mysql
@@ -26,10 +28,11 @@ spring:
       jdbc-url: jdbc:mysql://localhost:3306/springboot
       username: junseong
       password: pass
-      driver-class-name: com.mysql.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
   #entity 정보를 바탕으로 테이블 생성
   jpa:
     hibernate:
       ddl-auto: validate
     properties:
+#      hibernate.default_batch_fetch_size: ${chunkSize:1000}
 

@@ -4,6 +4,11 @@ spring:
 
 spring.batch.job.names: ${job.name:NONE}
 logging.level.org.springframework.batch: DEBUG
+
+#추가 설정
+spring.jpa.properties.hibernate.format_sql: true
+logging.level.org.hibernate.SQL: DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 ---
 spring:
   profiles: local
@@ -21,14 +26,10 @@ spring:
       jdbc-url: jdbc:mysql://localhost:3306/springboot
       username: junseong
       password: pass
-      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.jdbc.Driver
+  #entity 정보를 바탕으로 테이블 생성
   jpa:
     hibernate:
-      ddl-auto: none
-    show-sql: false
+      ddl-auto: validate
     properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-      hibernate.hbm2ddl.import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
-      hibernate.default_batch_fetch_size: ${chunkSize:1000}
-    open-in-view: false
 

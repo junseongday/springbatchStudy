@@ -1,17 +1,18 @@
-package com.sturdy.springbatch.appleciation;
+package com.sturdy.springbatch.appleciation.job.reader.jdbc;
 
-import com.sturdy.springbatch.appleciation.job.reader.jdbc.Pay;
+
 import org.assertj.core.api.Assertions;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+public class PayTest {
 
     @Test
-    void contextLoads() {
+    public void getId() {
         Pay pay = new Pay();
+        pay.setTxName("dd");
         Assertions.assertThat(pay).isNotNull();
     }
-
 }

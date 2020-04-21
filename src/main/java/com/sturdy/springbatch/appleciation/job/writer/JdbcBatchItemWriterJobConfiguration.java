@@ -45,6 +45,7 @@ public class JdbcBatchItemWriterJobConfiguration {
                 .writer(jdbcBatchItemWriter())
                 .build();
     }
+
     @Bean
     public JdbcCursorItemReader<Pay> jdbcBatchItemWriterReader() {
         return new JdbcCursorItemReaderBuilder<Pay>()
